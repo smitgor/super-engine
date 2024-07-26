@@ -12,7 +12,7 @@
     "deploy": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy --settings settings.json test.meteorapp.com"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17. 9",
+    "@babel/runtime": "^7.17.9",
     "axios": "^0.27.2",
     "luxon": "^3.0.3",
     "meteor-node-stubs": "^1.2.1",
