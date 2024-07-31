@@ -1,0 +1,14 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.stats-container {
+    border: 1px solid var(--primary-border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+@import './Stats/style.scss';
+@import './OrderStats/style.scss';

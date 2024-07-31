@@ -1,0 +1,54 @@
+.heading {
+    color: var(--primary-color);
+    font-size: 26px;
+    font-weight: 600;
+    @include container-padding;
+}
+
+.sub-heading {
+    color: var(--secondary-color);
+    font-size: 22px;
+    font-weight: 600;
+    @include container-padding;
+    img {
+        height: 24px;
+    }
+}
+.flex-justify-space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.simple-container {
+    @include container-padding;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid var(--primary-border);
+    margin: 14px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.card-shadow {
+    box-shadow: rgba(0, 44, 155, 0.15) 0px 6px 20px -6px;
+    transition: box-shadow 0.4s ease 0s, transform 0.4s ease 0s;
+    &:hover {
+        box-shadow: rgba(0, 44, 155, 0.15) 0px 10px 20px -2px;
+        transform: translateY(-4px);
+    }
+}
+
+img {
+    border-radius: $border-radius;
+}
+
+/** All padding /margin classes **/
+
+.no-top-padding {
+    padding-top: 0;
+}

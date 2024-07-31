@@ -1,0 +1,73 @@
+
+.cron-stats-container{
+ .cron-stats-list{
+    @include list-style;
+
+    &>li{
+        .label{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        @include list-item;
+    }
+    .cron-iterations{
+        @include list-style;
+
+        li{
+            padding: 8px 16px;
+            border: 1px solid var(--primary-border);
+            display: inline-block;
+            margin-right: 12px;
+            border-radius: 8px;
+            width: 120px;
+            &:hover{
+                border-color: var(--primary-color);
+                // background-color: var(--primary-bg);
+            }
+            &.success-run{
+                background-color: var(--success-bg);
+                border-color: var(--success-border);
+            }
+            &.error-run{
+                background-color: var(--error-bg);
+                border-color: var(--error-border);
+
+            }
+            &.to-run{
+                border-color: var(--success-border);
+            }
+            .ran-meta{
+                font-size: 16px;
+                font-weight: 600;
+                img{
+                    height: 14px;
+                    width: 14px;
+                    margin-right: 5px;
+                }
+            }
+            .label{
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .value{
+                font-size: 24px;
+                font-weight: 700;
+                span{
+                    font-size: 10px;
+                    font-weight: 600;
+                    margin-left: 4px;
+                    &.up{
+                        color: green;
+                    }
+                    &.down{
+                        color: red;
+
+                    }
+                }
+            }
+        }
+    }
+ }
+    
+}

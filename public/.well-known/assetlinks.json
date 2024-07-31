@@ -1,12 +1,12 @@
 [
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.meteorapp.agrisquad",
-      "sha256_cert_fingerprints": [
-        "70:88:64:FB:0F:A4:BD:95:3F:57:3D:37:AD:E6:88:B1:B1:28:C0:AC:E0:C8:EE:ED:95:42:B3:85:5E:3F:1F:4F"
-      ]
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.meteorapp.anthaprerna",
+            "sha256_cert_fingerprints": [
+                "77:11:DA:87:E4:7B:DD:46:65:00:F9:88:D2:8A:81:E6:67:67:C2:3D:BC:4F:2B:6E:19:81:97:DD:14:A2:41:B9"
+            ]
+        }
     }
-  }
 ]

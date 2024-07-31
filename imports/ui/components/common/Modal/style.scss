@@ -1,0 +1,20 @@
+.modal-container{
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: var(--transparent-primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    .modal-body-container{
+        padding: 30px;
+        text-align: center;
+        background-color: var(--primary-bg);
+        @include box-shadow;
+        border-radius: $border-radius;
+        border: 1px solid var(--primary-border);
+    }
+}

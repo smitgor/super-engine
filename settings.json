@@ -1,18 +1,23 @@
 {
-  "serviceConfigurations": {
-    "google": {
-      "clientId": "609269852376-9rq4kgtmvcn52po456bu8kjlsgjod998.apps.googleusercontent.com",
-      "secret": "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",
-      "loginStyle": "popup"
+    "public": {
+        "env": "development",
+        "GA_TRACKING_ID": "G-9E462BH15P",
+        "pageSize": 1,
+        "API_URL": "http://localhost:3000/api/",
+        "ONESIGNAL_APP_ID": "8764ad55-676c-4132-ac5a-ffea46cd27b1"
+    },
+    "galaxy.meteor.com": {
+        "env": {
+            "ROOT_URL": "https://anthaprerna.meteorapp.com/",
+            "DEPLOY_HOSTNAME": "galaxy.meteor.com",
+            "MONGO_URL": "mongodb://galenroot:EFjJt39CpTc9BQtR@ac-ujsfue2-shard-00-00.7r6m8mm.mongodb.net:27017,ac-ujsfue2-shard-00-01.7r6m8mm.mongodb.net:27017,ac-ujsfue2-shard-00-02.7r6m8mm.mongodb.net:27017/xodux?ssl=true&replicaSet=atlas-d7mimh-shard-0&authSource=admin&retryWrites=true&w=majority"
+        }
+    },
+    "packages": {
+        "mongo": {
+            "options": {
+                "tlsAllowInvalidCertificates": true
+            }
+        }
     }
-  },
-  "public": {
-    "WEATHER_API_KEY": "aead9d7fa9928e0d4b4cb5db2c61ab55"
-  },
-
-  "galaxy.meteor.com": {
-    "env": {
-      "MONGO_URL": "mongodb://mongo-url"
-    }
-  }
 }

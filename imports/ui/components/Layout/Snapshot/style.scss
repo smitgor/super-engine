@@ -1,0 +1,8 @@
+@import './Activity/style.scss';
+
+.snapshot-container{
+    width: 30%;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    border-left: 1px solid var(--primary-border);
+}

@@ -1,37 +1,90 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  extends: ['plugin:vue/vue3-essential', 'airbnb-base', 'plugin:prettier/recommended'],
-  overrides: [],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: ['vue'],
-  rules: {
-    'arrow-parens': ['error', 'as-needed'],
-    'vue/require-default-prop': 'off',
-    'vue/component-definition-name-casing': ['error', 'PascalCase'],
-    'vue/html-self-closing': 'off',
-    'vue/multi-word-component-names': 'off',
-    'vue/max-attributes-per-line': 'off',
-    'vue/html-indent': 'off',
-    'vue/singleline-html-element-content-newline': 'off',
-    indent: 'off',
-    'object-curly-spacing': 'off',
-    'no-param-reassign': 'off',
-    'no-underscore-dangle': 'off',
-  },
-  globals: {
-    Meteor: 'readonly',
-    Tracker: 'readonly',
-    Mongo: 'readonly',
-    ServiceConfiguration: 'readonly',
-    DateTime: 'writable',
-    cordova: 'readonly',
-    universalLinks: 'readonly',
-  },
+    env: {
+        browser: true,
+        es2021: true,
+        node: true,
+    },
+    extends: [
+        'airbnb',
+        'airbnb/hooks',
+        'plugin:meteor/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:prettier/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint', 'react', 'meteor'],
+    rules: {
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        ],
+        'default-param-last': 'off',
+        'no-param-reassign': 'off',
+        'consistent-return': 'off',
+        'func-names': 'off',
+        'no-nested-ternary': 'off',
+        'dot-notation': [
+            1,
+            { allowKeywords: true, allowPattern: '^[a-z]+(_[a-z]+)+$' },
+        ],
+        'meteor/audit-argument-checks': [0],
+        'react/function-component-definition': [
+            2,
+            {
+                namedComponents: 'arrow-function',
+                unnamedComponents: 'arrow-function',
+            },
+        ],
+        'import/no-extraneous-dependencies': [
+            'error',
+            {
+                devDependencies: true,
+                optionalDependencies: false,
+                peerDependencies: false,
+            },
+        ],
+        'react/jsx-props-no-spreading': 'off',
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            },
+        ],
+        'react/prop-types': 'off',
+        'no-underscore-dangle': [
+            'error',
+            {
+                allow: ['_id', '_debug', '__'],
+            },
+        ],
+        'import/no-unresolved': [
+            2,
+            {
+                ignore: ['^meteor/'],
+            },
+        ],
+    },
+    globals: {
+        Meteor: 'readonly',
+        WebApp: 'readonly',
+        Accounts: 'readonly',
+        Mongo: 'readonly',
+        _t: 'readonly',
+    },
+    settings: {
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+            },
+        },
+    },
 };

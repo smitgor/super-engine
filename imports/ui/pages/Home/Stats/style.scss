@@ -1,0 +1,27 @@
+.stats-container {
+    width: calc(50vw - 50px);
+    .stats-list {
+        @include list-style;
+        li {
+            .label {
+                font-size: 14px;
+                font-weight: 300;
+            }
+            .value {
+                font-size: 24px;
+                font-weight: 700;
+                span {
+                    font-size: 10px;
+                    font-weight: 600;
+                    margin-left: 4px;
+                    &.up {
+                        color: green;
+                    }
+                    &.down {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

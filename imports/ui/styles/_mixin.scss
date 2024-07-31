@@ -1,0 +1,41 @@
+@mixin container-padding{
+    padding: 16px 14px;
+}
+@mixin list-style {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+@mixin list-item {
+    padding: 8px 0;
+    @include container-padding;
+    cursor: pointer;
+    border-top: 1px solid var(--primary-border);
+    &:hover{
+        background-color: var(--secondary-bg);
+        border-color: var(--secondary-bg);
+    }
+}
+
+@mixin box-shadow{
+    box-shadow: rgba(0, 44, 155, 0.15) 0px 6px 20px -6px;
+
+}
+
+@mixin scrollbar {
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        width: 1px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        outline: 1px solid var(--secondary-bg);
+
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--secondary-bg);
+        outline: 1px solid var(--secondary-bg);
+    }
+}

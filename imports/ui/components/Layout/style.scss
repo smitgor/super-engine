@@ -1,0 +1,21 @@
+@import './Header/styles.scss';
+@import './BottomBar/style.scss';
+@import './Snapshot/style.scss';
+@import './ErrorMessage/style.scss';
+@import './Main/style.scss';
+
+.layout {
+    background-color: var(--primary-bg);
+    position: relative;
+    .page-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: var(--primary-color);
+        // margin-top: 20px;
+        .main-content {
+            width: 50%;
+            height: 100vh;
+        }
+    }
+}

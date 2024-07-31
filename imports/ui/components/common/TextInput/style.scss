@@ -1,0 +1,52 @@
+.text-input-container {
+    label {
+        font-weight: 600;
+        color: var(--secondary-color);
+        display: block;
+        font-size: 16px;
+        margin-bottom: $margin-bottom;
+    }
+    input,
+    select,
+    textarea {
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+        background-color: var(--primary-bg);
+        font-size: 18px;
+        display: block;
+        width: 100%;
+        color: var(--secondary-color);
+        padding: 12px;
+        border: 2px solid var(--primary-border);
+        border-radius: $border-radius;
+        margin-bottom: $margin-bottom;
+        box-sizing: border-box;
+        &:hover {
+            border-color: var(--secondary-border);
+        }
+        &:focus {
+            outline: none;
+            border-color: var(--secondary-border);
+        }
+        &::placeholder {
+            color: var(--primary-border);
+        }
+        transition: border 0.4s ease 0s, transform 0.4s ease 0s;
+    }
+
+    &.has-error {
+        input,
+        select,
+        textarea {
+            border-color: var(--error-border);
+        }
+        label {
+            color: var(--error-border);
+        }
+    }
+
+    .input-error {
+        color: var(--error-border);
+        margin-bottom: $margin-bottom;
+    }
+}

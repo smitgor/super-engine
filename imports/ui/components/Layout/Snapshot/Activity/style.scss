@@ -1,0 +1,25 @@
+
+.activity-container{
+    border: 1px solid var(--primary-border);
+    margin: 16px;
+    border-radius: 8px;
+
+    ul{
+        @include list-style;
+        height: calc(100vh - 200px);
+        @include scrollbar;
+
+        li{
+            @include list-item;
+            p{
+                font-weight: 400;
+                font-size: 14px;
+                margin: 6px 0;
+            }
+            span{
+                font-weight: 300;
+                font-size: 10px;
+            }
+        }
+    }
+}

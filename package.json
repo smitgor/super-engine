@@ -1,40 +1,78 @@
 {
-  "name": "meteor-vue2-app",
-  "private": true,
-  "scripts": {
-    "set-db-url": "export MONGO_URL='mongodb://MONGO_URL'",
-    "start": " npm run set-db-url && meteor run --settings=settings.json",
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "build-app": "meteor build ../output --server=https://test.meteorapp.com",
-    "generate-apk": "bundletool build-apks --bundle=../output/android/project/app/release/app-release.aab --output=output.apks --mode=universal && mv output.apks output.zip && unzip output.zip && rm output.zip && rm toc.pb",
-    "deploy": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy --settings settings.json test.meteorapp.com"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.17.9",
-    "axios": "^0.27.2",
-    "luxon": "^3.0.3",
-    "meteor-node-stubs": "^1.2.1",
-    "vue": "^2.6.14",
-    "vue-meteor-tracker": "^2.0.0",
-    "vue-router": "^3.0.7",
-    "vuetify": "^2.6.10"
-  },
-  "meteor": {
-    "mainModule": {
-      "client": "client/main.js",
-      "server": "server/main.js"
+    "name": "xodux_admin",
+    "private": true,
+    "scripts": {
+        "get-mongo-url": "echo 'mongodb://galenroot:EFjJt39CpTc9BQtR@ac-ujsfue2-shard-00-00.7r6m8mm.mongodb.net:27017,ac-ujsfue2-shard-00-01.7r6m8mm.mongodb.net:27017,ac-ujsfue2-shard-00-02.7r6m8mm.mongodb.net:27017/xodux?ssl=true&replicaSet=atlas-d7mimh-shard-0&authSource=admin&retryWrites=true&w=majority'",
+        "meteor-start": "meteor --settings=settings.json",
+        "start": "cross-env MONGO_URL=`npm run get-mongo-url | tail -1` npm run meteor-start",
+        "start-mobile": "cross-env MONGO_URL=`npm run get-mongo-url | tail -1`  meteor run --settings settings.json android-device --mobile-server=http://192.168.0.101:3000 --port=192.168.0.101:3000",
+        "lint": "eslint .",
+        "pretest": "npm run lint --silent",
+        "test": "meteor test --once --driver-package meteortesting:mocha",
+        "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+        "visualize": "meteor --production --extra-packages bundle-visualizer",
+        "deploy-prod": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy anthaprerna --settings production-settings.json",
+        "build-app": "meteor build ../output --server=https://anthaprerna.meteorapp.com",
+        "generate-apk": "bundletool build-apks --bundle=../output/android/project/app/release/app-release.aab --output=output.apks --mode=universal && mv output.apks output.zip && unzip output.zip && rm output.zip && rm toc.pb"
     },
-    "testModule": "tests/main.js"
-  },
-  "devDependencies": {
-    "eslint": "^8.24.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.5.1",
-    "prettier": "2.7.1"
-  }
+    "eslintConfig": {
+        "extends": "@meteorjs/eslint-config-meteor"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.20.7",
+        "@reduxjs/toolkit": "^1.9.5",
+        "@types/meteor": "^2.9.2",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^20.3.1",
+        "aws-sdk": "^2.1419.0",
+        "axios": "^1.4.0",
+        "bcrypt": "^5.1.0",
+        "body-parser": "^1.20.2",
+        "fibers": "^5.0.3",
+        "i18next": "^23.4.6",
+        "i18next-browser-languagedetector": "^7.1.0",
+        "i18next-fetch-backend": "^5.0.2",
+        "immer": "^10.0.2",
+        "localforage": "^1.10.0",
+        "luxon": "^3.3.0",
+        "match-sorter": "^6.3.1",
+        "meteor-node-stubs": "^1.2.5",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-ga4": "^2.1.0",
+        "react-hook-form": "^7.45.0",
+        "react-i18next": "^13.2.1",
+        "react-redux": "^8.1.1",
+        "react-router-dom": "^6.12.1",
+        "redux-logger": "^3.0.6",
+        "sharp": "^0.32.3",
+        "simpl-schema": "^3.4.1",
+        "sort-by": "^1.2.0",
+        "typescript": "^5.1.6",
+        "use-debounce": "^9.0.4"
+    },
+    "meteor": {
+        "mainModule": {
+            "client": "client/main.jsx",
+            "server": "server/main.js"
+        },
+        "testModule": "tests/main.js"
+    },
+    "devDependencies": {
+        "@hookform/devtools": "^4.3.1",
+        "@types/react": "^18.2.12",
+        "@typescript-eslint/eslint-plugin": "^5.59.11",
+        "@typescript-eslint/parser": "^5.59.11",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.42.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-meteor": "^7.3.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "prettier": "2.8.8"
+    }
 }

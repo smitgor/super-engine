@@ -1,0 +1,52 @@
+$toggle-width: 8rem;
+$slider-size: 3rem;
+$padding: 0.25rem;
+
+
+.Toggle {
+  align-items: center;
+  background-color: #f6d365;
+  border: 2px solid #454545;
+  border-radius: 3rem;
+  color: #fff;
+  display: flex;
+  height: calc(#{$slider-size} + #{$padding * 3});
+  justify-content: space-around;
+  padding: 0.25rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+  width: $toggle-width;
+
+  &--checked {
+    background-color: #434343;
+    border-color: #fda085;
+  }
+
+  &__slider {
+    background-color: darken(#fda085, 10%);
+    border: 2px solid darken(#fda085, 14%);
+    border-radius: 50%;
+    content: "";
+    left: $padding;
+    height: $slider-size;
+    width: $slider-size;
+    position: absolute;
+    transform: translateX(0);
+    transition: all 0.2s ease-out;
+  }
+
+  &__text {
+    text-align: center;
+    width: 50%;
+  }
+
+  input:checked + .Toggle__slider {
+    background-color: darken(#434343, 10%);
+    border: 2px solid darken(#434343, 14%);
+    transform: translateX(calc(#{$toggle-width} - #{$slider-size} - #{$padding * 3}));
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}

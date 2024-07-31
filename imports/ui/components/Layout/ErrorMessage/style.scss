@@ -1,0 +1,23 @@
+.global-error{
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    background: var(--primary-bg);
+    border: 1px solid var(--error-border);
+    border-radius: $border-radius;
+    padding: 24px;
+    width: 160px;
+    .flex-justify-space-between{
+        justify-content: flex-start;
+        margin-bottom: $margin-bottom;
+    }
+    img{
+        width: 18px;
+        height: 18px;
+        margin-right: 18px;
+    }
+    span{
+        color: var(--error-border);
+        font-size: 18px;
+    }
+}
