@@ -1,6 +1,7 @@
 import './orders/methods';
 import './api';
 import './users/methods';
+import "./shops/index"
 
 const addDummyUser = function () {
     const SEED_USERNAME = 'test';

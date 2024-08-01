@@ -12,6 +12,16 @@ const sidebarRoutes = [
         label: 'Inventory',
         image: '/icons/cron.png',
     },
+    {
+        route: '/shop/1',
+        label: 'Shops',
+        image: '/icons/cron.png',
+    },
+    {
+        route: '/user-home-page',
+        label: 'User Home Page',
+        image: '/icons/home.png',
+    },
 ];
 const Sidebar = () => {
     return (

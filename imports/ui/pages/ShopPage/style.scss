@@ -1,0 +1,33 @@
+.shop-home-page {
+  margin: 14px;
+  .shop-name {
+    text-align: center;
+  }
+  
+  .available-items-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .available-items {
+    }
+    .shop-item-search {
+    }
+  }
+  .items-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 40px;
+  }  
+  .cart-cta{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    padding: 8px 12px;
+    border-radius: 24px;
+    background: #515151;
+    color: white;
+  }
+}

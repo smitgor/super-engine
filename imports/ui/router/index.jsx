@@ -16,6 +16,9 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Settings from '../pages/Settings';
 import ErrorPage from '../pages/Error';
+import ShopPage from "../pages/ShopPage"
+import Cart from "../pages/Cart"
+import UserHomePage from "../pages/UserHomePage"
 
 const router = createBrowserRouter([
     {
@@ -68,6 +71,30 @@ const router = createBrowserRouter([
                 element: (
                     <Authenticated>
                         <Inventory />
+                    </Authenticated>
+                ),
+            },
+            {
+                path: 'shop/:shopId',
+                element: (
+                    <Authenticated>
+                        <ShopPage />
+                    </Authenticated>
+                ),
+            },
+            {
+                path: 'cart',
+                element: (
+                    <Authenticated>
+                        <Cart />
+                    </Authenticated>
+                ),
+            },
+            {
+                path: 'user-home-page',
+                element: (
+                    <Authenticated>
+                        <UserHomePage />
                     </Authenticated>
                 ),
             },
