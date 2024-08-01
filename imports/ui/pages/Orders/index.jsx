@@ -1,23 +1,23 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/Button';
-import SourcesList from './List';
+import OrdersList from './List';
 
 const Sources = () => {
     const navigate = useNavigate();
     return (
         <div>
             <div className="heading flex-justify-space-between">
-                <span>Sources</span>
+                <span>Orders</span>
                 <Button
                     onClickHandler={() => {
                         navigate('/sources/create');
                     }}
                 >
-                    Create
+                    Create Order
                 </Button>
             </div>
-            <SourcesList />
+            <OrdersList />
         </div>
     );
 };

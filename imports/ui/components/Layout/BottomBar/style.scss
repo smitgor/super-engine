@@ -26,9 +26,12 @@
                 img {
                     height: 24px;
                     width: 24px;
+                    margin-right: 8px;
                 }
                 span {
-                    display: none;
+                    font-size: 12px;
+                    display: inline-block;
+                    color: var(--primary-color);
                 }
 
                 &:hover {
@@ -38,14 +41,6 @@
                 &.active {
                     background-color: var(--secondary-bg);
                     border-color: var(--primary-border);
-                    img {
-                        margin-right: 8px;
-                    }
-                    span {
-                        font-size: 12px;
-                        display: inline-block;
-                        color: var(--primary-color);
-                    }
                 }
             }
         }

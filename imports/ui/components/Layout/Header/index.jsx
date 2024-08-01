@@ -9,7 +9,7 @@ const Header = () => {
             <Link to="/">
                 <div className="logo">
                     <img src="/icons/home.png" alt="home" />
-                    <span>Xodus</span>
+                    <span>Anthaprerna</span>
                 </div>
             </Link>
             <Link to="/settings">

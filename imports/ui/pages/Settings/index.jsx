@@ -22,6 +22,16 @@ const Settings = () => {
                 </Button>
             </div>
             <div className="simple-container">
+                <p>Current Language - English</p>
+                <Button
+                    onClickHandler={() => {
+                        // TODO
+                    }}
+                >
+                    Change Language
+                </Button>
+            </div>
+            <div className="simple-container">
                 <p>{currentUser.username}</p>
                 <Button
                     onClickHandler={() => {
