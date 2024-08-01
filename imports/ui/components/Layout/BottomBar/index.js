@@ -5,12 +5,12 @@ const sidebarRoutes = [
     {
         route: '/orders',
         label: 'Orders',
-        image: '/icons/reminders.png',
+        image: '/icons/stats.png',
     },
     {
         route: '/inventory',
         label: 'Inventory',
-        image: '/icons/cron.png',
+        image: '/icons/digest.png',
     },
 ];
 const Sidebar = () => {

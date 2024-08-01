@@ -6,7 +6,7 @@ const CronStats = () => {
         <div className="stats-container cron-stats-container">
             <div className="sub-heading flex-justify-space-between">
                 <span>Today&apos;s Orders</span>
-                <img alt="activity" src="/icons/reminders.png" />
+                <img alt="activity" src="/icons/stats.png" />
             </div>
             <OrderList />
         </div>

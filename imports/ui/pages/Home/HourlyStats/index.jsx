@@ -5,7 +5,7 @@ const HourlyStats = () => {
         <div className="stats-container">
             <div className="sub-heading flex-justify-space-between">
                 <span>Hourly Sales</span>
-                <img alt="activity" src="/icons/statistics.png" />
+                <img alt="activity" src="/icons/cron.png" />
             </div>
             <div className="simple-container no-top-padding">
                 <p>Last 24 hours</p>
