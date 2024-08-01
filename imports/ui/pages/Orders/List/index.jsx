@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { DateTime } from 'luxon';
 import { Link } from 'react-router-dom';
 import Button from '../../../components/common/Button';
+import Order from './order';
 
 const SourcesList = () => {
     const [list, setList] = useState([]);
@@ -30,17 +30,13 @@ const SourcesList = () => {
         <div className="order-list">
             {list.map(({ cartValue, items, _id, createdAt, createdBy }) => (
                 <Link to={`/orders/details/${_id}`} key={_id}>
-                    <div className="order-card-container">
-                        <div className="order-name">₹{cartValue}</div>
-                        <div className="order-updated-on-by">
-                            {DateTime.now(createdAt).toFormat(
-                                'hh:mm MMMM dd, yyyy'
-                            )}{' '}
-                        </div>
-                        <div className="order-items">
-                            Total Items: {items.length}
-                        </div>
-                    </div>
+                    <Order
+                        key={_id}
+                        cartValue={cartValue}
+                        items={items}
+                        createdBy={createdBy}
+                        createdAt={createdAt}
+                    />
                 </Link>
             ))}
             {page !== -1 && (

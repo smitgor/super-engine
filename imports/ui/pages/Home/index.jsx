@@ -1,6 +1,6 @@
 import React from 'react';
 import Stats from './Stats';
-import CronStats from './OrderStats';
+import OrderStats from './OrderStats';
 import HourlyStats from './HourlyStats';
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
                     <Stats />
                     <HourlyStats />
                 </div>
-                <CronStats />
+                <OrderStats />
             </div>
         </div>
     );

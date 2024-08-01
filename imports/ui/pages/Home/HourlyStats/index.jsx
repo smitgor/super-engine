@@ -13,9 +13,16 @@ const HourlyStats = () => {
                     style={{
                         width: '100%',
                         height: '400px',
-                        background: '#eee',
                     }}
-                />
+                >
+                    <img
+                        style={{
+                            width: '100%',
+                        }}
+                        src="graph.png"
+                        alt=""
+                    />
+                </div>
             </div>
         </div>
     );
