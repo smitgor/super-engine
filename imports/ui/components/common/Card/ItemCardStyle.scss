@@ -1,0 +1,43 @@
+
+.item-card {
+  width: 150px;
+  padding: 12px;
+  background: #2f2f2f;
+  border-radius: 8px;
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .item-details {
+    margin-top: 4px;
+  }
+
+  .price-and-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    .counter {
+      width: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      .count-add-button,
+      .count-minus-button {
+        width: 25px;
+        padding: 4px;
+        cursor: pointer;
+      }
+      
+      .item-add-btn {
+        width: 100%;
+        padding: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}
