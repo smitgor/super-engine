@@ -14,15 +14,22 @@
             text-decoration: none;
             background-color: var(--primary-bg);
             .inventory-meta-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                & > div {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
                 img {
                     width: 100px;
                     border-radius: $border-radius;
                     border: 1px solid var(--primary-border);
                     height: 100px;
                 }
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
+
                 text-transform: capitalize;
                 span {
                     border-radius: 10px;
@@ -37,6 +44,23 @@
                     padding: 6px;
                     background-color: red;
                     color: #fff;
+                }
+                .ai-alert {
+                    margin-top: 16px;
+                    border-radius: 10px;
+                    padding: 10px;
+                    &.success {
+                        background-color: #d7fff1;
+                        color: #285943;
+                    }
+                    &.warning {
+                        background-color: #fdd692;
+                        color: #ec7357;
+                    }
+                    &.danger {
+                        background-color: #f15c5c;
+                        color: #fff;
+                    }
                 }
             }
         }

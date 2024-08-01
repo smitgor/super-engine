@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../components/common/Button';
 
 const items = [
     'beetroot.avif',
@@ -26,21 +27,55 @@ const Orders = () => {
                     <li key={item}>
                         <div className="inventory-meta-container">
                             <div>
-                                <img src={`items/${item}`} alt="" />
+                                <div>
+                                    <img src={`items/${item}`} alt="" />
+                                </div>
+                                <div>
+                                    <h2>
+                                        {item.substring(
+                                            0,
+                                            item.indexOf('.avif')
+                                        )}
+                                    </h2>
+                                    {i % 3 === 0 ? (
+                                        <span className="available">
+                                            Available: 20
+                                        </span>
+                                    ) : (
+                                        <span className="unavailable">
+                                            Out of Stock
+                                        </span>
+                                    )}
+                                    {i === 1 && (
+                                        <div className="ai-alert success">
+                                            Smart Suggestion: Stock Up soon, as
+                                            the demands going to get high!
+                                        </div>
+                                    )}
+                                    {i % 4 !== 0 && i % 3 === 0 && (
+                                        <div className="ai-alert warning">
+                                            Smart Suggestion: No need to stock
+                                            up as the demand is going down.
+                                        </div>
+                                    )}
+                                    {i % 5 === 0 && (
+                                        <div className="ai-alert danger">
+                                            Smart Suggestion: Sale is low in
+                                            this item, try to sell the stock as
+                                            most of these going to get perished
+                                            soon.
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                             <div>
-                                <h2>
-                                    {item.substring(0, item.indexOf('.avif'))}
-                                </h2>
-                                {i % 3 === 0 ? (
-                                    <span className="available">
-                                        Available: 20
-                                    </span>
-                                ) : (
-                                    <span className="unavailable">
-                                        Out of Stock
-                                    </span>
-                                )}
+                                <Button
+                                    onClickHandler={() => {
+                                        // dispatch(toggleTheme());
+                                    }}
+                                >
+                                    Update Stock
+                                </Button>
                             </div>
                         </div>
                     </li>

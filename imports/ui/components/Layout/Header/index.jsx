@@ -14,7 +14,7 @@ const Header = () => {
             </Link>
             <Link to="/settings">
                 <div className="user-details">
-                    <span>{currentUser?.username} </span>
+                    <span>{currentUser?.profile.name} </span>
 
                     <img src="/icons/settings.png" alt="settings" />
                 </div>
