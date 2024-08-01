@@ -2,27 +2,28 @@ import Sources from '../../imports/api/models/sources';
 
 const items = [
     {
-        _id: 12,
-        desc: "thi sis desc",
-        price: '1548',
+        _id: 'mushroom',
+        desc: "Mushroom",
+        price: '200',
         img: "/items/beetroot.avif",
     },
     {
-        _id: 13,
-        desc: "thi sis desc",
-        price: '1548',
+        _id: 'ginger',
+        desc: "Ginger",
+        price: '150',
         img: "/items/beetroot.avif",
     },
     {
-        _id: 14,
-        desc: "thi sis desc",
-        price: '1548',
+        _id: 'carrot',
+        desc: "Carrot",
+        price: '80',
         img: "/items/beetroot.avif",
+        isOutOfStock: true
     },
     {
-        _id: 15,
-        desc: "thi sis desc",
-        price: '1548',
+        _id: 'tomato',
+        desc: "Tomato",
+        price: '120',
         img: "/items/beetroot.avif",
     },
 ];
@@ -54,13 +55,14 @@ Meteor.methods({
     console.log("🚀 ~ placeOrder ~ orderDetails:", typeof orderDetails,orderDetails)
     const user = Meteor.user()
     let cartValue = 0
-    orderDetails.forEach((ele)=>{
+    const items = orderDetails.map((ele)=>{
       cartValue+=(ele.quantity*ele.price)
+      return {...ele, itemId:ele.id}
     })
     const data = {
       customer: user.username,
       userId:user._id,
-      items: orderDetails,
+      items,
       createdAt: new Date(),
       cartValue,
       paymentDetails: {
@@ -74,61 +76,70 @@ Meteor.methods({
     const user = Meteor.user();
     if(!user) return
     return [{
+      _id:"eukjaslaishdakl",
       customer: 'test',
       userId: 'gTWYyo4jNZCdvgpp2',
       items: [
         {
-          id: 15,
+          itemId: 'potato',
           quantity: 1,
-          desc: 'thi sis desc',
+          desc: 'Potato',
           price: '1548',
           img: '/items/beetroot.avif'
         },
         {
-          id: 14,
-          quantity: 1,
-          desc: 'thi sis desc',
-          price: '1548',
-          img: '/items/beetroot.avif'
-        },
-        {
-          id: 13,
+          itemId: 'garlic',
           quantity: 3,
-          desc: 'thi sis desc',
+          desc: 'Garlic',
           price: '1548',
           img: '/items/beetroot.avif'
-        }
+        },
+        {
+          itemId: 'mushroom',
+          quantity: 1,
+          desc: 'Mushroom',
+          price: '1548',
+          img: '/items/beetroot.avif'
+        },
+        {
+          itemId: 'onion',
+          quantity: 3,
+          desc: 'Onion',
+          price: '1548',
+          img: '/items/beetroot.avif'
+        },
       ],
-      createdAt: "2024-08-01T15:35:53.316Z",
+      createdAt: "12AM, 22 July 2024",
       cartValue: 7740,
       paymentDetails: { method: 'CASH', isPaid: true }
     },{
+      _id:"lekuhrkasjlsk",
       customer: 'test',
       userId: 'gTWYyo4jNZCdvgpp2',
       items: [
         {
-          id: 15,
+          itemId: 'onion',
           quantity: 1,
           desc: 'thi sis desc',
           price: '1548',
           img: '/items/beetroot.avif'
         },
         {
-          id: 14,
+          itemId: 'tomato',
           quantity: 4,
           desc: 'thi sis desc',
           price: '1548',
           img: '/items/beetroot.avif'
         },
         {
-          id: 13,
+          itemId: 'potato',
           quantity: 3,
           desc: 'thi sis desc',
           price: '1548',
           img: '/items/beetroot.avif'
         }
       ],
-      createdAt: "2024-08-01T15:35:53.316Z",
+      createdAt: "10AM, 22 July 2024",
       cartValue: 2312,
       paymentDetails: { method: 'CASH', isPaid: true }
     }]

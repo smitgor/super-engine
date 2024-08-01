@@ -4,8 +4,11 @@
   padding: 12px;
   background: #2f2f2f;
   border-radius: 8px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
   img {
-    width: 100%;
+    width: 150px;
     aspect-ratio: 1;
     object-fit: contain;
     border-radius: 8px;
@@ -17,9 +20,11 @@
 
   .price-and-counter {
     display: flex;
+    flex-grow: 1;
     align-items: center;
     justify-content: space-between;
     margin-top: 12px;
+    margin-bottom: 6px;
     .counter {
       width: 75px;
       display: flex;
@@ -38,6 +43,18 @@
         padding: 4px;
         cursor: pointer;
       }
+    }
+  }
+  .out-of-stock-box{
+    .out-of-stock{
+      padding: 5px 2px;
+      border-radius: 2px;
+      background: #2f2f2f;
+    }
+    button{
+      width: 100%;
+      font-size: small;
+      padding: 4px 8px;
     }
   }
 }

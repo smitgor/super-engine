@@ -45,13 +45,23 @@ const ShopPage = () => {
   return (
     <div className="shop-home-page">
       <h1 className="shop-name">{shopDetails.name}</h1>
+      <div className='shop-details-box'>
+          <img src="/icons/shop.png" alt="" />
+          <div className='shop-info'>
+            <div>
+              <span>address: 21/2 1st Sector HSR layout, Bangalore </span>
+              <button>See in Google map</button>
+            </div>
+            <div>Proprietor name: Vedant sasane</div>
+            <div>Proprietor number: 213123123</div>
+          </div>
+        </div>
       <div className="available-items-box">
         <h2 className="available-items">Available items</h2>
-        <input className="shop-item-search" type="text" />
       </div>
       <div className='items-container'>
         {shopDetails && shopDetails.items && shopDetails.items.map((ele)=>(
-          <ItemCard key={ele._id} id={ele._id} desc={ele.desc} price={ele.price} img={ele.img}  />
+          <ItemCard key={ele._id} id={ele._id} desc={ele.desc} price={ele.price} img={ele.img} isOutOfStock={ele.isOutOfStock} />
           ))
         }
 

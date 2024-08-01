@@ -6,7 +6,7 @@ import {
   removeCartItem,
 } from '../../../store/features/cart'
 
-const ItemCard = ({id, desc, img, price}) => {
+const ItemCard = ({id, desc, img, price, isOutOfStock}) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(0)
   const cartItems = useSelector((state) => {
@@ -41,18 +41,23 @@ const ItemCard = ({id, desc, img, price}) => {
   };
   return (
     <div className="item-card">
-      <img src={img} alt="" />
+      <img src={`/items/${id}.avif`} alt="" />
       <div className="item-details">{desc}</div>
       <div className="price-and-counter">
         <div className="price">₹{price}</div>
-        {count === 0 && (
+        {isOutOfStock && (
+          <div className='out-of-stock'>
+            Out Of Stock
+          </div>
+        )}
+        {!isOutOfStock && count === 0 && (
           <div className="counter">
             <button className="item-add-btn" onClick={addItemInCart}>
               Add
             </button>
           </div>
         )}
-        {count !== 0 && (
+        {!isOutOfStock && count !== 0 && (
           <div className="counter">
             <button className="count-minus-button" onClick={removeItem}>
               -
@@ -64,6 +69,11 @@ const ItemCard = ({id, desc, img, price}) => {
           </div>
         )}
       </div>
+      {isOutOfStock && (
+        <div className='out-of-stock-box'>
+            <button>Notify Me</button>
+        </div>
+      )}
     </div>
   );
 };

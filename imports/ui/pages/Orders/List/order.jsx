@@ -15,8 +15,8 @@ const Order = ({ cartValue, createdAt, items }) => {
                             <img src={`items/${itemId}.avif`} alt={itemId} />
                         </li>
                     ))}
-                    {items.length > 3 && (
-                        <span> + {items.length - 3} items</span>
+                    {items.length > 2 && (
+                        <span> + {items.length - 2} items</span>
                     )}
                 </ul>
             </div>
